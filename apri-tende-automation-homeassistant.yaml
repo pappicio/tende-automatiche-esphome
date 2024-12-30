@@ -1,0 +1,42 @@
+#need workday integration on homeassistant
+
+
+alias: apri tende camera
+description: alle 07.30 lavorativi/09.30 festivi apre tende camera
+triggers:
+  - trigger: time
+    at: "07:30:00"
+  - trigger: time
+    at: "09:30:00"
+conditions: []
+actions:
+  - if:
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: "on"
+      - condition: and
+        conditions:
+          - condition: time
+            after: "07:00:00"
+            before: "08:00:00"
+    then:
+      - action: switch.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.tende_camera_apri_tende_camera
+  - if:
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: "off"
+      - condition: and
+        conditions:
+          - condition: time
+            after: "09:00:00"
+            before: "11:00:00"
+    then:
+      - action: switch.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.tende_camera_apri_tende_camera
