@@ -1,6 +1,6 @@
 esphome:
   name: tende_camera
-  friendly_name: tende_camera
+  friendly_name: tende camera
   name_add_mac_suffix: false
   project:
     name: esphome.web
@@ -134,11 +134,20 @@ globals:
     type: int
     restore_value: yes
     initial_value: '1000' 
-  
 
+
+##### 3 pin motore: 1: STEP (motore_pin);DIR (inverti_pin); ENABLE (enable_pin)
+##PIN Stepper in pwm per dare input movimenti stepper
+output:
+  - platform: ledc
+    pin: GPIO1
+    frequency: 100 Hz
+    id: motore_pin
+
+###################################################
 switch:
 
-  #pilotare steper
+  ##PIN Stepper per abilita/disabilita movimenti
   - platform: gpio
     internal: True
     pin: GPIO0
@@ -158,22 +167,24 @@ switch:
 
     on_turn_on: 
       then:
-        - output.turn_on: buzzer
+        - output.turn_on: motore_pin
         - output.set_level:
-            id: buzzer
+            id: motore_pin
             level: "50%"
     on_turn_off: 
       then:
-        - output.turn_off: buzzer
+        - output.turn_off: motore_pin
 
 
+#PIN Stepper per senso orario/antiorario
   - platform: gpio
     internal: True
-    name: inverti
+    name: inverti_pin
     pin: GPIO2
     inverted: no
-    id: inverti
+    id: inverti_pin
     restore_mode: RESTORE_DEFAULT_OFF
+
 ###########SWITCH PER ALEXA!!!!###################
   - platform: template
     name: "apri tende camera"
@@ -196,15 +207,6 @@ switch:
       - switch.turn_off: chiudi_tende_camera
 ###################################################
 
-#enalbe_pin sullo stepper, in pwm per pilotare la velocità di rotazione
-output:
-  - platform: ledc
-    pin: GPIO1
-    frequency: 100 Hz
-    id: buzzer
-
-###################################################
-
 #endstop fisici
 binary_sensor:
   - platform: gpio
@@ -222,7 +224,7 @@ binary_sensor:
       then:
         - if:
             condition:
-               switch.is_on: inverti
+               switch.is_on: inverti_pin
             then:
               - script.execute: spegni
        
@@ -243,7 +245,7 @@ binary_sensor:
       then:
         - if:
             condition:
-               switch.is_off: inverti
+               switch.is_off: inverti_pin
             then:
               - script.execute: spegni
        
@@ -269,7 +271,7 @@ binary_sensor:
     
     on_click:
       min_length: 100ms
-      max_length: 350ms
+      max_length: 500ms
       then:
         - if:
             condition:
@@ -293,7 +295,7 @@ binary_sensor:
 
     on_click:
       min_length: 100ms
-      max_length: 350ms
+      max_length: 500ms
       then:
         - if:
             condition:
@@ -306,7 +308,7 @@ binary_sensor:
 
 ###################################################
 
-#apri/chiudi, femra su pagina web
+#apri/chiudi, ferma su pagina web
 cover:
   - platform: template
     name: "Pilotaggio Tende"
@@ -356,10 +358,10 @@ script:
           then:
             - script.execute: spegni
             - switch.turn_on: enable_pin
-            - switch.turn_on: inverti
-            - output.turn_on: buzzer
+            - switch.turn_on: inverti_pin
+            - output.turn_on: motore_pin
       - output.set_level:
-          id: buzzer
+          id: motore_pin
           level: "50%"
 
           
@@ -372,10 +374,10 @@ script:
           then:
             - script.execute: spegni
             - switch.turn_on: enable_pin
-            - switch.turn_off: inverti
-            - output.turn_on: buzzer
+            - switch.turn_off: inverti_pin
+            - output.turn_on: motore_pin
       - output.set_level:
-          id: buzzer
+          id: motore_pin
           level: "50%"
 
 ###################################################
@@ -395,12 +397,12 @@ number:
       - globals.set:
           id: setvel
           value: !lambda "return x;"
-      - output.turn_on: buzzer
+      - output.turn_on: motore_pin
       #- output.ledc.set_frequency:
       #    id: buzzer
       #    frequency: !lambda "return x;"
       - output.set_level:
-          id: buzzer
+          id: motore_pin
           level: "50%"
 
 #inizia da 0 fino a max_velocita per dare effetto accelerazione iniziale
@@ -414,12 +416,12 @@ number:
     step: 0.1
     initial_value: 100
     set_action:
-      - output.turn_on: buzzer
+      - output.turn_on: motore_pin
       - output.ledc.set_frequency:
-          id: buzzer
+          id: motore_pin
           frequency: !lambda "return x;"
       - output.set_level:
-          id: buzzer
+          id: motore_pin
           level: "50%"
  
 ###################################################
@@ -441,7 +443,7 @@ interval:
               // Condizione di incremento o decremento
               //raddoppia per dimezzare tempo e raddoppiare accelerazione ecc....
 
-              float step = 50;  // Passo di incremento/decremento
+              float step = 100;  // Passo di incremento/decremento
               if (id(accelerazione).state < 600)
               {
               //step = 1;
