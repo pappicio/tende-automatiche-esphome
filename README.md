@@ -1,8 +1,12 @@
 # tende-automatiche-esphome
 
- ![montaggio](https://github.com/user-attachments/assets/8066e5c3-765a-4bf9-a26b-05b445ab0d3f)
+![montaggio](https://github.com/user-attachments/assets/8066e5c3-765a-4bf9-a26b-05b445ab0d3f)
 
+![montaggio2](https://github.com/user-attachments/assets/2958f959-8b56-483a-93d3-46421296f80f)
 
+![montaggio3](https://github.com/user-attachments/assets/a401977e-26e5-4e04-a8bd-2c55fd4b5b0c)
+
+![montaggio4](https://github.com/user-attachments/assets/7ca78ea2-0936-4c3b-9339-782d1bb57367)
 
 #hardware:
 
