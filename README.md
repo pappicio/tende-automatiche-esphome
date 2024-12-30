@@ -1,7 +1,7 @@
 # tende-automatiche-esphome
 
+ ![montaggio](https://github.com/user-attachments/assets/8066e5c3-765a-4bf9-a26b-05b445ab0d3f)
 
-https://github.com/pappicio/tende-automatiche-esphome/blob/main/montaggio.jpg
 
 
 #hardware:
