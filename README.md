@@ -36,7 +36,7 @@ ESP32 C3
 
 1 x https://it.aliexpress.com/item/10000401582873.html?spm=a2g0o.productlist.main.3.981d1a1cz3LZDS&algo_pvid=2b8bae18-3cd3-4752-967d-2f86317c7eba&utparam-url=scene%3Asearch%7Cquery_from%3A
 
-6 viti da 3mm (4 lunghe 8 mm per i motori, 2 da 16mm per gli switch endstop)
+6 viti da 3mm (4 lunghe 8 mm per sostenere il motore, 2 da 16mm per gli switch endstop)
 
 6 x https://it.aliexpress.com/item/1005002827635096.html
 
