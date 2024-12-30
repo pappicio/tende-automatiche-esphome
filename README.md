@@ -6,9 +6,9 @@ modulo per stepper driver:
 
 1 x https://it.aliexpress.com/item/1005002915948304.html?spm=a2g0o.cart.0.0.68e318fcdl2t8n&mp=1&gatewayAdapt=glo2ita
 
-stepper driver
+stepper driver (tmc 2208)
 
-1 x https://it.aliexpress.com/item/1005004063785803.html?spm=a2g0o.cart.0.0.68e318fcdl2t8n&mp=1&gatewayAdapt=glo2ita
+1 x https://it.aliexpress.com/item/4000947676742.html?spm=a2g0o.productlist.main.1.5cf94ddcRzjY6p&algo_pvid=eb951f35-9011-401c-99ee-16ef093b327b&utparam-url=scene%3Asearch%7Cquery_from%3A
 
 motore passo passo e cavi
 
