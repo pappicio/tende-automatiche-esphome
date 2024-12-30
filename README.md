@@ -1,5 +1,9 @@
 # tende-automatiche-esphome
 
+
+https://github.com/pappicio/tende-automatiche-esphome/blob/main/montaggio.jpg
+
+
 #hardware:
 
 modulo per stepper driver:
