@@ -1,0 +1,1 @@
+# tende-automatiche-esphome
