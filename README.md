@@ -20,7 +20,7 @@ ESP32 C3
 1 x https://it.aliexpress.com/item/1005007032546456.html?spm=a2g0o.productlist.main.9.4e5e72b2oGQRPl&algo_pvid=fac038f5-9b78-460a-88c0-5fcf9cc753a7&utparam-url=scene%3Asearch%7Cquery_from%3A
 
 
-2 pudh button
+2 push button
 
 2 x https://it.aliexpress.com/item/4000164264475.html?spm=a2g0o.productlist.main.45.26ed3b76k8nHj9&algo_pvid=471f2939-59e1-408b-a6ca-3d6ee31799e2&utparam-url=scene%3Asearch%7Cquery_from%3A
 
