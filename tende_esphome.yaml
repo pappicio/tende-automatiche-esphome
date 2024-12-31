@@ -360,9 +360,9 @@ script:
             - switch.turn_on: inverti_pin
             - output.turn_on: motore_pin
             - switch.turn_on: enable_pin
-      - output.set_level:
-          id: motore_pin
-          level: "50%"
+            - output.set_level:
+                id: motore_pin
+                level: "50%"
 
           
   - id: chiudi
@@ -376,9 +376,9 @@ script:
             - switch.turn_off: inverti_pin
             - output.turn_on: motore_pin
             - switch.turn_on: enable_pin
-      - output.set_level:
-          id: motore_pin
-          level: "50%"
+            - output.set_level:
+                id: motore_pin
+                level: "50%"
 
 ###################################################
   
