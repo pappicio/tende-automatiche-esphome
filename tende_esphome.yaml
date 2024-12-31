@@ -357,9 +357,9 @@ script:
                 return id(open_endstop).state==false;
           then:
             - script.execute: spegni
-            - switch.turn_on: enable_pin
             - switch.turn_on: inverti_pin
             - output.turn_on: motore_pin
+            - switch.turn_on: enable_pin
       - output.set_level:
           id: motore_pin
           level: "50%"
@@ -373,9 +373,9 @@ script:
                 return id(close_endstop).state==false;
           then:
             - script.execute: spegni
-            - switch.turn_on: enable_pin
             - switch.turn_off: inverti_pin
             - output.turn_on: motore_pin
+            - switch.turn_on: enable_pin
       - output.set_level:
           id: motore_pin
           level: "50%"
