@@ -48,4 +48,9 @@ ESP32 C3
 
 6 x https://it.aliexpress.com/item/1005002827635096.html
 
+10 viti da legno M2 per 6 o 8 mm
+
+10 x https://it.aliexpress.com/item/1005004177352184.html?spm=a2g0o.productlist.main.27.7c491aacaNPr06&algo_pvid=846731f8-34da-403c-8b8f-ec9680be5fef&algo_exp_id=846731f8-34da-403c-8b8f-ec9680be5fef-13&pdp_npi=4%40dis%21EUR%211.75%211.75%21%21%211.78%211.78%21%402103917f17356522359606166e86b2%2112000028291573742%21sea%21IT%211910279782%21X&curPageLogUid=UQ6TaAXMABVt&utparam-url=scene%3Asearch%7Cquery_from%3A
+
+
 parti stampate:
